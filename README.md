@@ -1,5 +1,5 @@
 [![build status](https://github.com/shady-abdelhamid/spaces/workflows/build/badge.svg)](https://github.com/shady-abdelhamid/spaces/actions)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a9a3b272-a95b-4113-815e-254d0d3a6aab/deploy-status)](https://app.netlify.com/sites/shady-spaces/deploys)
 # Spaces
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
