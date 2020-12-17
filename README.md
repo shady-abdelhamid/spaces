@@ -1,3 +1,5 @@
+[![build status](https://github.com/shady-abdelhamid/spaces/workflows/build/badge.svg)](https://github.com/shady-abdelhamid/spaces/actions)
+
 # Spaces
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
