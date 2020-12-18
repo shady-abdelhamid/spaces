@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   @Input() public title = '';
-  public isLoggedin = false;
+  public isLoggedin = true;
   constructor() { }
 
   ngOnInit(): void {
