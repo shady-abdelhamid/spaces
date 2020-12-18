@@ -1,0 +1,16 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal text-primary">
+    <i class="fas fa-arrows-alt"></i>
+    {{title}}
+  </h5>
+  <ng-content></ng-content>
+  <ng-container *ngIf="isLoggedin; then enquiry; else login"></ng-container>
+</div>
+
+<ng-template #enquiry>
+  <a class="btn btn-primary rounded-pill" href="#">ENQUIRY</a>
+</ng-template>
+
+<ng-template #login>
+  <a class="btn btn-primary rounded-pill" href="#">LOGIN</a>
+</ng-template>
