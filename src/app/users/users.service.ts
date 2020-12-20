@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { User } from './user.model';
 @Injectable()
 export class UsersService {
-  private readonly baseRoute = 'https://reqres.in/api/users'
+  private readonly baseRoute = 'https://reqres.in/api/users';
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class UsersService {
 
         return data;
       })
-    )
+    );
   }
 
   public getUserById(id: number): Observable<User> {
