@@ -1,0 +1,10 @@
+<div class="modal__container" [class.modal__container--hidden]="isHidden">
+  <div class="modal__picture">
+    <i class="modal__user-ico fas fa-user"></i>
+  </div>
+  <div class="modal__body mt-5">
+    <ng-content></ng-content>
+  </div>
+</div>
+
+<div class="modal__overlay" (click)="close()" [class.modal__overlay--hidden]="isHidden"></div>

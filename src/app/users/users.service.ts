@@ -14,11 +14,8 @@ export class UsersService {
     return this.http.get(this.baseRoute).pipe(
       map((value: any) => {
         const { data } = value;
-        data.forEach((user, i) => {
-          data[i] = new User(user);
-        });
 
-        return data;
+        return data.map(user => new User(user));
       })
     );
   }
