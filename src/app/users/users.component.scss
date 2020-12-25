@@ -1,0 +1,13 @@
+@import '../../scss/mixins';
+
+.users {
+    &__nav {
+        background-color: #e9ecef;
+        @include box-shadow();
+    }
+
+    &__heading {
+        display: flex;
+    }
+
+}
