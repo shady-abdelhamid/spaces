@@ -14,14 +14,11 @@ export class UserListComponent implements OnInit {
     this.usersService.getUsers().subscribe({
       next: (response: any) => {
         this.users = response;
-        console.log(this.users);
       },
       error: error => {
         console.log(error);
       },
-      complete: () => {
-        console.log('Done');
-      }
+      complete: () => { }
     });
   }
 

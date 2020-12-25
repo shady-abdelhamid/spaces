@@ -23,7 +23,6 @@ export class UsersComponent implements OnInit {
 
   public onModalCtaClick(cta: Cta): void {
     if (cta === Cta.Submit) {
-      console.log(this.addUserForm.value);
       const { name, job } = this.addUserForm.value;
       this.usersService.createUser(name, job).subscribe(_ => console.log(_));
     }
