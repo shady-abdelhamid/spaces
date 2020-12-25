@@ -1,10 +1,26 @@
 <div class="modal__container" [class.modal__container--hidden]="isHidden">
   <div class="modal__picture">
-    <i class="modal__user-ico fas fa-user"></i>
+    <ng-container *ngIf="imgUrl; then imgTemplate; else iconTemplate"></ng-container>
   </div>
+
   <div class="modal__body mt-5">
     <ng-content></ng-content>
   </div>
+
+  <div class="modal__footer form-group d-flex mt-4">
+    <button type="button" class="btn btn-outline-primary rounded-pill w-100" (click)="close(Cta.Cancel)">Cancel</button>
+    <button type="button" class="btn btn-primary rounded-pill w-100 ml-2" (click)="close(Cta.Submit)">
+      {{isEditMode ? 'Edit' : 'Add'}}
+    </button>
+  </div>
 </div>
 
-<div class="modal__overlay" (click)="close()" [class.modal__overlay--hidden]="isHidden"></div>
+<div class="modal__overlay" (click)="close(Cta.Cancel)" [class.modal__overlay--hidden]="isHidden"></div>
+
+<ng-template #iconTemplate>
+  <i class="modal__user-ico fas fa-user"></i>
+</ng-template>
+
+<ng-template #imgTemplate>
+  <img class="modal__user-img" [src]="imgUrl">
+</ng-template>

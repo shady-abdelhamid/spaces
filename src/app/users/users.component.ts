@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Cta } from '../shared/modal/cta.enum';
 
 @Component({
   selector: 'app-users',
@@ -19,7 +20,8 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  public closeModal(): void {
+  public onModalCtaClick(cta: Cta): void {
+    console.log(cta);
     this.modalHidden = true;
   }
 
