@@ -9,7 +9,7 @@
 
     </div>
     <div class="p-2">
-      <button type="button" class="btn btn-primary rounded-pill">
+      <button type="button" class="btn btn-primary rounded-pill" (click)="addUserModal.open()">
         <i class="fas fa-plus"></i>
         New User
       </button>
@@ -17,3 +17,17 @@
   </div>
 </nav>
 <router-outlet></router-outlet>
+
+<app-modal [title]="'add user'" [isHidden]="modalHidden" #addUserModal (ctaClick)="onModalCtaClick($event)">
+  <form [formGroup]="addUserForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" class="form-control" name="name" id="name" placeholder="name...">
+    </div>
+
+    <div class="form-group">
+      <label for="job">Job title</label>
+      <input type="text" formControlName="job" class="form-control" name="job" id="job" placeholder="job title...">
+    </div>
+  </form>
+</app-modal>

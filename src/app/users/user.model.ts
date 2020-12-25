@@ -3,12 +3,19 @@ export class User {
   public name: string;
   public email: string;
   public imageUrl: string;
+  public job?: string;
 
   constructor(data: any = {}) {
-    this.id = data.id;
-    this.name = data.first_name && data.last_name ?
-      `${data.first_name} ${data.last_name}` : '';
-    this.email = data.email ? data.email : '';
-    this.imageUrl = data.avatar ? data.avatar : '';
+    const { id, name, job, first_name, last_name, avatar, email } = data;
+
+    this.id = id;
+    // use name if found
+    // failover to fname lname concatination
+    // of empty value
+    this.name = name ? name : first_name && last_name ? `${first_name} ${last_name}` : '';
+
+    this.email = email ? email : '';
+    this.imageUrl = avatar ? avatar : '';
+    this.job = job ? job : '';
   }
 }

@@ -14,17 +14,30 @@ export class UsersService {
     return this.http.get(this.baseRoute).pipe(
       map((value: any) => {
         const { data } = value;
-        data.forEach((user, i) => {
-          data[i] = new User(user);
-        });
 
-        return data;
+        return data.map(user => new User(user));
       })
     );
   }
 
   public getUserById(id: number): Observable<User> {
     return this.http.get(`${this.baseRoute}/${id}`).pipe(
+      map((value) => new User(value))
+    );
+  }
+
+  public createUser(name: string, job: string): Observable<User> {
+    const payload = { name, job };
+
+    return this.http.post(this.baseRoute, payload).pipe(
+      map((value) => new User(value))
+    );
+  }
+
+  public updateUser(id: number, name: string, job: string): Observable<User> {
+    const payload = { name, job };
+
+    return this.http.put(`${this.baseRoute}/${id}`, payload).pipe(
       map((value) => new User(value))
     );
   }
