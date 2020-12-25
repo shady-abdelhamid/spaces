@@ -14,7 +14,7 @@
             {{user.name}}
           </p>
           <div class="user-list__actions p-2 flex-grow-1 text-right mt-5">
-            <button type="button" class="btn btn-outline-primary">
+            <button type="button" class="btn btn-outline-primary" (click)="fillUserForm(user); addUserModal.open()">
               <i class="fas fa-pen"></i>
             </button>
 
@@ -23,6 +23,23 @@
             </button>
             <i class="fas fa-chevron-right text-primary ml-5"></i>
           </div>
+
+          <app-modal [title]="'edit user'" [imgUrl]="user.imageUrl" [isHidden]="modalHidden" #addUserModal
+            (ctaClick)="onModalCtaClick($event)">
+            <form [formGroup]="editUserForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name" class="form-control" name="name" id="name"
+                  placeholder="name..." [value]="user.name">
+              </div>
+
+              <div class="form-group">
+                <label for="job">Job title</label>
+                <input type="text" formControlName="job" class="form-control" name="job" id="job"
+                  placeholder="job title...">
+              </div>
+            </form>
+          </app-modal>
         </li>
       </ul>
     </div>
