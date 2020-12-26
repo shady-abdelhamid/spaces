@@ -7,20 +7,22 @@
       </div>
       <div class="col-md-6">
         <div class="container text-muted">
-          <h3>Welcome back!</h3>
+          <h3 class="text-dark">Welcome back!</h3>
           <p>Please login to access your <span class="text-primary">Spaces</span> Dashboard</p>
-          <form>
+          <form [formGroup]="loginForm">
             <div class="form-group row">
               <label for="username" class="col-md-12 col-form-label">Username</label>
               <div class="col-md-12">
-                <input type="text" class="form-control" name="username" id="username" placeholder="username...">
+                <input type="text" formControlName="email" class="form-control" name="username" id="username"
+                  placeholder="username...">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="password" class="col-md-12 col-form-label">Password</label>
               <div class="col-md-12">
-                <input type="password" class="form-control" name="password" id="password" placeholder="password...">
+                <input type="password" formControlName="password" class="form-control" name="password" id="password"
+                  placeholder="password...">
               </div>
             </div>
 
@@ -30,7 +32,7 @@
 
               </div>
               <div class="offset-md-3 col-md-3">
-                <button type="submit" class="btn btn-primary rounded-pill">Login</button>
+                <button type="submit" class="btn btn-primary rounded-pill px-3 py-2" (click)="login()">LOGIN</button>
               </div>
             </div>
           </form>
