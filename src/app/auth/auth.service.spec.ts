@@ -10,6 +10,7 @@ describe(AuthService.name, () => {
   beforeEach(() => {
     http = new HttpClientMock();
     service = new AuthService(http as any);
+    http.response = { token: 'token' };
 
   });
 
@@ -23,7 +24,6 @@ describe(AuthService.name, () => {
       // arrange
       const correctUrl = `https://reqres.in/api/login`;
       http.lastUrl = null;
-      http.response = { token: 'token' };
 
       // act
       await service.login('', '').toPromise();
@@ -35,7 +35,6 @@ describe(AuthService.name, () => {
     it('should fire request via POST method', async () => {
       // arrange
       http.lastHttpMethod = null;
-      http.response = { token: 'token' };
 
       // act
       await service.login('', '').toPromise();
