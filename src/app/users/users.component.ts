@@ -19,6 +19,7 @@ export class UsersComponent implements OnInit {
       name: new FormControl(''),
       job: new FormControl(''),
     });
+
   }
 
   public onModalCtaClick(cta: Cta): void {

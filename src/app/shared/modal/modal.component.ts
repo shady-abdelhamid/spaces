@@ -30,8 +30,4 @@ export class ModalComponent implements OnInit {
     this.isHidden = true;
     this.ctaClick.emit(cta);
   }
-
-  public submit(): void {
-    this.isHidden = true;
-  }
 }
